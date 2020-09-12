@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #00171F;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+#start-button {
+  background-color: #AD343E;
+  color: white;
+  border: 1px solid #FCAA67;
+  margin : 20px 0;
+  padding: 20px;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.grid {
+  width: 200px;
+  height: 400px;
+  background-color: #E6E8E6;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid div {
+  width: 20px;
+  height: 20px;
+  background-color: #F2AF29;
+}
