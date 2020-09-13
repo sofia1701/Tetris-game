@@ -22,6 +22,10 @@ body {
   font-family: 'IBM Plex Mono', monospace;
 }
 
+.container {
+  display: flex;
+}
+
 .grid {
   width: 200px;
   height: 400px;
@@ -43,4 +47,19 @@ body {
 .tetromino {
   background-color: #F2AF29;
 
+}
+
+.mini-grid {
+  margin-left: 50px;
+  width: 80px;
+  height: 80px;
+  background-color: #E6E8E6;  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mini-grid div {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #00171F;
 }
