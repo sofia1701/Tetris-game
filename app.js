@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const width = 10;
   let nextRandom = 0;
   let timerId;
-  let score = 0
+  let score = 0;
 
   //Tetrominoes
   const lTetromino = [
@@ -116,6 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
       draw();
       displayShape();
       addScore();
+      gameOver();
     }
   }
 
@@ -230,6 +231,18 @@ document.addEventListener("DOMContentLoaded", () => {
         squares = squaresRemoved.concat(squares);
         squares.forEach((cell) => grid.appendChild(cell));
       }
+    }
+  }
+
+  //Game over
+  function gameOver() {
+    if (
+      current.some((index) =>
+        squares[currentPosition + index].classList.contains("taken")
+      )
+    ) {
+      scoreDisplay.innerHTML = "GAME OVER";
+      clearInterval(timerId);
     }
   }
 });
