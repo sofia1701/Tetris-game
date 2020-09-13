@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const startButton = document.querySelector("#start-button");
   const width = 10;
   let nextRandom = 0;
+  let timerId;
 
   //Tetrominoes
   const lTetromino = [
@@ -72,17 +73,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   //Tetromino moves down every 1sec
-  timerId = setInterval(moveDown, 1000);
+  //timerId = setInterval(moveDown, 1000);
 
   //Assign functions to keycodes
   function control(e) {
     if (e.keyCode === 37) {
       moveLeft();
-    }else if(e.keyCode === 38) {
+    } else if (e.keyCode === 38) {
       rotate();
-    }else if(e.keyCode === 39) {
+    } else if (e.keyCode === 39) {
       moveRight();
-    }else if(e.keyCode === 40) {
+    } else if (e.keyCode === 40) {
       moveDown();
     }
   }
@@ -139,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function moveRight() {
     undraw();
     const isAtRightEdge = current.some(
-      (index) => (currentPosition + index) % width === width-1
+      (index) => (currentPosition + index) % width === width - 1
     );
 
     if (!isAtRightEdge) currentPosition += 1;
@@ -156,9 +157,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //Rotate the tetromino
   function rotate() {
-    undraw()
-    currentRotation ++;
-    if(currentRotation === current.length) {
+    undraw();
+    currentRotation++;
+    if (currentRotation === current.length) {
       currentRotation = 0;
     }
     current = tetrominoes[random][currentRotation];
@@ -171,19 +172,32 @@ document.addEventListener("DOMContentLoaded", () => {
   const displayIndex = 0;
 
   const nextTetrominoes = [
-    [1, displayWidth+1, displayWidth*2+1, 2], //lTetromino
-    [0, displayWidth, displayWidth+1, displayWidth*2+1], //zTetromino
-    [1, displayWidth, displayWidth+1, displayWidth+2], //tTetromino
-    [0, 1, displayWidth, displayWidth+1], //oTetromino
-    [1, displayWidth+1, displayWidth*2+1, displayWidth*3+1] //iTetromino
-  ]
+    [1, displayWidth + 1, displayWidth * 2 + 1, 2], //lTetromino
+    [0, displayWidth, displayWidth + 1, displayWidth * 2 + 1], //zTetromino
+    [1, displayWidth, displayWidth + 1, displayWidth + 2], //tTetromino
+    [0, 1, displayWidth, displayWidth + 1], //oTetromino
+    [1, displayWidth + 1, displayWidth * 2 + 1, displayWidth * 3 + 1], //iTetromino
+  ];
 
   function displayShape() {
-    displaySquares.forEach(square => {
-      square.classList.remove("tetromino")
-    })
-    nextTetrominoes[nextRandom].forEach(index => {
-      displaySquares[displayIndex + index].classList.add("tetromino")
+    displaySquares.forEach((square) => {
+      square.classList.remove("tetromino");
+    });
+    nextTetrominoes[nextRandom].forEach((index) => {
+      displaySquares[displayIndex + index].classList.add("tetromino");
     });
   }
+
+  //Button functionality
+  startButton.addEventListener("click", () => {
+    if (timerId) {
+      clearInterval(timerId);
+      timerId = null;
+    } else {
+      draw();
+      timerId = setInterval(moveDown, 1000);
+      nextRandom = Math.floor(Math.random() * tetrominoes.length);
+      displayShape();
+    }
+  });
 });
