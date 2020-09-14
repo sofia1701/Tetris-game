@@ -1,5 +1,7 @@
 # The Tetris Game
 
+![Screenshot](tetris.png)
+
 The repository contains a simple version of the famous game from the 80's : Tetris.
 
 The game contains 1 level only, meant to be upgraded with more levels in the future.
@@ -15,7 +17,3 @@ Live version:
 JavaScript <br/>
 HTML <br/>
 CSS
-
-### Author
-
-Sofia
