@@ -3,41 +3,68 @@
 }
 
 body {
-  background-color: #00171F;
+  background-color: #00171f;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
 }
 
-.info {
-  display: flex;
+#T {
+  color: #ff8c00;
 }
-
-.score {
- margin-left: 75px;
+#e {
+  color: blue;
+}
+#t {
+  color: #b22222;
+}
+#r {
+  color: #9932cc;
+}
+#i {
+  color: #32cd32;
+}
+#s {
+  color: #008080;
 }
 
 #start-button {
-  background-color: #AD343E;
+  background-color: #ad343e;
   color: white;
-  border: 1px solid #FCAA67;
-  margin : 20px 0;
+  border: 1px solid #fcaa67;
+  margin: 20px 0;
   padding: 20px;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+#start-button:hover {
+  background-color: #fcaa67;
+  color: #00171f;
 }
 
 .container {
   display: flex;
 }
 
+.main-container {
+  display: flex;
+  flex-flow: column;
+}
+
+.secondary-container {
+  display: flex;
+  flex-flow: column;
+  margin-top: 38px;
+}
+
 .grid {
   width: 200px;
   height: 400px;
-  background-color: #E6E8E6;
+  background-color: #e6e8e6;
   display: flex;
   flex-wrap: wrap;
 }
@@ -45,23 +72,26 @@ body {
 .grid div {
   width: 20px;
   height: 20px;
-  border: 1px solid rgb(85, 84, 84)
+  border: 1px solid#00171F;
 }
 
 .grid .taken {
-  border: 1px solid #00171F;
+  border: 1px solid #00171f;
 }
 
 .tetromino {
-  background-color: #F2AF29;
+  background-color: #f2af29;
+}
 
+.score {
+  margin-left: 45px;
 }
 
 .mini-grid {
   margin-left: 50px;
   width: 80px;
   height: 80px;
-  background-color: #E6E8E6;  
+  background-color: #e6e8e6;
   display: flex;
   flex-wrap: wrap;
 }
@@ -69,5 +99,5 @@ body {
 .mini-grid div {
   width: 20px;
   height: 20px;
-  border: 1px solid #00171F;
+  border: 1px solid #00171f;
 }

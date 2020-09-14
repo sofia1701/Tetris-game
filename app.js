@@ -7,7 +7,14 @@ document.addEventListener("DOMContentLoaded", () => {
   let nextRandom = 0;
   let timerId;
   let score = 0;
-  const colors = ["#ff8c00", "blue", "#b22222", "#9932cc", "#32cd32", "#008080"];
+  const colors = [
+    "#ff8c00",
+    "blue",
+    "#b22222",
+    "#9932cc",
+    "#32cd32",
+    "#008080",
+  ];
 
   //Tetrominoes
   const lTetromino = [
@@ -211,8 +218,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (timerId) {
       clearInterval(timerId);
       timerId = null;
+      startButton.innerHTML = "Start";
     } else {
       draw();
+      startButton.innerHTML = "Pause";
       timerId = setInterval(moveDown, 1000);
       nextRandom = Math.floor(Math.random() * tetrominoes.length);
       displayShape();
