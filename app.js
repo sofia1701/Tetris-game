@@ -110,10 +110,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //Move tetromino down
   function moveDown() {
-    freeze();
     undraw();
     currentPosition += width;
     draw();
+    freeze();
   }
 
   //Freezes tetromino
