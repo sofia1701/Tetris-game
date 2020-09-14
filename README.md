@@ -10,7 +10,7 @@ It has also an audio feature.
 
 It was built to practice some of the inbuilt Javascript methods, such as, addEventListener(), querySelector(), querySelectorAll(),keyCode(), Math.floor(), Math.random(), length, forEach(), splice(),clearInterval(), setInterval(), some(), innerHTML(), every(), add(),remove(), contains().
 
-Live version: 
+Live version: https://sofia1701.github.io/Tetris-game/ 
 
 ## Built with...
 
