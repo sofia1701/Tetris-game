@@ -15,9 +15,9 @@
     <h1>
       <span id="T">W</span><span id="e">e</span><span id="t">l</span
       ><span id="r">c</span><span id="i">o</span><span id="s">m</span
-      ><span id="T">e</span> <span id="e">T</span><span id="t">o</span> <span id="T">T</span
-      ><span id="e">e</span><span id="t">t</span><span id="r">r</span
-      ><span id="i">i</span><span id="s">s</span>
+      ><span id="T">e</span> <span id="e">T</span><span id="t">o</span>
+      <span id="T">T</span><span id="e">e</span><span id="t">t</span
+      ><span id="r">r</span><span id="i">i</span><span id="s">s</span>
     </h1>
 
     <div class="container">
@@ -255,6 +255,39 @@
           <div></div>
           <div></div>
           <div></div>
+        </div>
+        <audio
+          loop
+          id="player"
+          src="tetrisSoundtrack.mp3"
+          type="audio/mp3"
+        ></audio>
+        <h3 class="music">Music</h3>
+        <div class="audio-buttons">
+          <button
+            class="audio-button"
+            onclick="document.getElementById('player').play()"
+          >
+            >
+          </button>
+          <button
+            class="audio-button"
+            onclick="document.getElementById('player').pause()"
+          >
+            ||
+          </button>
+          <button
+            class="audio-button"
+            onclick="document.getElementById('player').volume+=0.1"
+          >
+            +
+          </button>
+          <button
+            class="audio-button"
+            onclick="document.getElementById('player').volume-=0.1"
+          >
+            -
+          </button>
         </div>
       </div>
     </div>
