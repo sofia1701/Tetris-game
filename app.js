@@ -178,15 +178,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //Rotate the tetromino
   function rotate() {
-    undraw();
-    currentRotation++;
-    if (currentRotation === current.length) {
-      currentRotation = 0;
-    }
-    current = tetrominoes[random][currentRotation];
-    draw();
-  }
+    const isAtLeftEdge = current.some(
+      (index) => (currentPosition + index) % width === 0
+    );
 
+    const isAtRightEdge = current.some(
+      (index) => (currentPosition + index) % width === width - 1
+    );
+    if (!(isAtLeftEdge || isAtRightEdge)) {
+      undraw();
+      currentRotation++;
+      if (currentRotation === current.length) {
+        currentRotation = 0;
+      }
+      current = tetrominoes[random][currentRotation];
+      draw();
+    }
+  }
   //Display next tetromino in mini-grid
   const displaySquares = document.querySelectorAll(".mini-grid div");
   const displayWidth = 4;
